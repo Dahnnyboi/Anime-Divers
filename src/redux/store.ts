@@ -5,14 +5,14 @@ import rootReducer from "./root.reducer";
 import rootSaga from "./root.sagas";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function configureStore(): any {
-  const sagaMiddleware = createSagaMiddleware();
-  const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(sagaMiddleware))
-  );
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(sagaMiddleware))
+);
 
-  sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 
-  return store;
-}
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export { store };

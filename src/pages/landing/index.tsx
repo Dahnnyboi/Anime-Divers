@@ -1,36 +1,18 @@
 import React from "react";
-import { Image, ImageSuspense } from "components/Image";
-import wallpaper from "assets/images/anime-wallpaper.jpg";
-import { Button } from "react-bootstrap";
-import { CenterLayout } from "components/Layouts";
-import styles from "./landing.module.scss";
+
+import LandingShowcase from "./LandingShowcase";
+import LandingTrendingAnime from "./LandingTrendingAnime";
+import LandingTrendingManga from "./LandingTrendingManga";
+import useGetTrending from "./useGetTrending";
 
 function Index(): JSX.Element {
+  const { animes, loadingAnime, mangas, loadingManga } = useGetTrending();
+
   return (
     <div>
-      <div className={styles["image-container"]}>
-        <ImageSuspense>
-          <Image
-            source={wallpaper}
-            className={styles["image-container__image"]}
-          />
-        </ImageSuspense>
-        <div className={styles["image-container__text"]}>
-          <h1>Anime Divers</h1>
-          <hr className="border border-white" />
-          <p>
-            Modern anime discovery platform that helps you track the anime
-            you&apos;re watching, discover new anime and socialize with other
-            fans.
-          </p>
-          <Button variant="primary">Go to Anime</Button>{" "}
-          <Button variant="outline-primary">Go to Anime</Button>
-        </div>
-      </div>
-
-      <CenterLayout className="py-4">
-        <h4>Trending Anime</h4>
-      </CenterLayout>
+      <LandingShowcase />
+      <LandingTrendingAnime data={animes} loading={loadingAnime} />
+      <LandingTrendingManga data={mangas} loading={loadingManga} />
     </div>
   );
 }

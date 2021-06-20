@@ -11,7 +11,7 @@ function Image({ source, className }: imageProps): JSX.Element {
     srcList: source,
   });
 
-  return <img src={src} alt={source} className={className} />;
+  return <img src={src || ""} alt={source} className={className || ""} />;
 }
 
 Image.defaultProps = {

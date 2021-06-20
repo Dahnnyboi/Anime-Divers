@@ -1,15 +1,11 @@
-import { takeLatest, call, put, StrictEffect } from "redux-saga/effects";
-import { getAnimeList } from "api/anime";
+import { fork, take, call, put, StrictEffect } from "redux-saga/effects";
+import { getTrendingAnimeList } from "api/anime";
 
 import * as types from "./anime.types";
 import * as actions from "./anime.actions";
 
-function* workerAnime(): Generator<
-  StrictEffect,
-  void,
-  Record<string, unknown>
-> {
-  const data = yield call(getAnimeList);
+function* getAnime(): Generator<StrictEffect, void, Record<string, unknown>> {
+  const data = yield call(getTrendingAnimeList);
 
   yield put(actions.successAnime(data));
 }
@@ -19,7 +15,10 @@ export function* watcherAnime(): Generator<
   void,
   Record<string, unknown>
 > {
-  yield takeLatest(types.ANIME_CALL_REQUEST, workerAnime);
+  while (true) {
+    yield take(types.ANIME_CALL_REQUEST);
+    yield fork(getAnime);
+  }
 }
 
 export default watcherAnime;

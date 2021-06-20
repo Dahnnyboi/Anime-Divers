@@ -1,0 +1,20 @@
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+
+  .image-container__image {
+    width: 100%;
+    filter: brightness(50%);
+    min-height: 520px;
+    object-fit: cover;
+  }
+
+  .image-container__text {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

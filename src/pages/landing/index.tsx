@@ -1,15 +1,20 @@
-import React, { useEffect } from "react";
-import { useAppDispatch } from "redux/hooks";
-import { requestAnime } from "redux/root.actions";
+import React from "react";
+
+import LandingShowcase from "./LandingShowcase";
+import LandingTrendingAnime from "./LandingTrendingAnime";
+import LandingTrendingManga from "./LandingTrendingManga";
+import useGetTrending from "./useGetTrending";
 
 function Index(): JSX.Element {
-  const dispatch = useAppDispatch();
+  const { animes, loadingAnime, mangas, loadingManga } = useGetTrending();
 
-  useEffect(() => {
-    dispatch(requestAnime());
-  }, [dispatch]);
-
-  return <div>Landing Page</div>;
+  return (
+    <div>
+      <LandingShowcase />
+      <LandingTrendingAnime data={animes} loading={loadingAnime} />
+      <LandingTrendingManga data={mangas} loading={loadingManga} />
+    </div>
+  );
 }
 
 export default Index;

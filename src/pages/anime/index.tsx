@@ -1,7 +1,8 @@
 import React from "react";
+import { LoadingPage } from "components/Loadings";
 
 function Index(): JSX.Element {
-  return <div>Anime page</div>;
+  return <LoadingPage />;
 }
 
 export default Index;

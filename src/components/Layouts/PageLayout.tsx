@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationBar } from "components/Navigations";
+import { NavigationBar, Footer } from "components/Pages";
 import styles from "./styles.module.scss";
 
 interface PageLayoutProps {
@@ -9,8 +9,9 @@ interface PageLayoutProps {
 function PageLayout({ children }: PageLayoutProps): JSX.Element {
   return (
     <div className={styles.page}>
-      <NavigationBar className={styles["page-header"]} />
+      <NavigationBar />
       <div className={styles["page-content"]}>{children}</div>
+      <Footer className={styles["page-footer"]} />
     </div>
   );
 }

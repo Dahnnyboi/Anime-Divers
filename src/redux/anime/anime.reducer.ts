@@ -19,6 +19,8 @@ function animeReducer(
       return { ...state, isLoading: true };
     case types.ANIME_CALL_SUCCESS:
       return { ...state, isLoading: false, data: action.payload };
+    case types.ANIME_CALL_FAILURE:
+      return initialState;
     default:
       return state;
   }

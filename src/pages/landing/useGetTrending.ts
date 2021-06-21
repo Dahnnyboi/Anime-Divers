@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "redux/hooks";
+import { getTrendingAnimeList } from "api/anime";
+import { getTrendingMangaList } from "api/manga";
+import useAlerts from "utils/useAlerts";
 import { requestAnime, requestManga } from "redux/root.actions";
 
 interface AnimesData {
@@ -12,6 +15,7 @@ interface AnimesData {
 }
 
 function useGetTrending(): AnimesData {
+  const { alertFailure } = useAlerts();
   const dispatch = useAppDispatch();
   const { data: dataAnime, isLoading: loadingAnime } = useAppSelector(
     (state) => state.anime
@@ -22,9 +26,9 @@ function useGetTrending(): AnimesData {
 
   // TODO: api request for params, error callback
   useEffect(() => {
-    dispatch(requestAnime());
-    dispatch(requestManga());
-  }, [dispatch]);
+    dispatch(requestAnime(getTrendingAnimeList, alertFailure));
+    dispatch(requestManga(getTrendingMangaList, alertFailure));
+  }, []);
 
   const { data: animes } = dataAnime;
   const { data: mangas } = dataManga;

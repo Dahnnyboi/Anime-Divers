@@ -1,13 +1,22 @@
-import { fork, take, call, put, StrictEffect } from "redux-saga/effects";
-import { getTrendingMangaList } from "api/manga";
+import { call, put, StrictEffect, takeLatest } from "redux-saga/effects";
+import { ACTION_FETCH } from "configs/constants";
 
 import * as types from "./manga.types";
 import * as actions from "./manga.actions";
 
-function* getManga(): Generator<StrictEffect, void, Record<string, unknown>> {
-  const data = yield call(getTrendingMangaList);
+function* getManga(
+  action: ACTION_FETCH
+): Generator<StrictEffect, void, Record<string, unknown>> {
+  const { fetch, callback } = action;
+  try {
+    const data = yield call(fetch);
 
-  yield put(actions.successManga(data));
+    yield put(actions.successManga(data));
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (e: any) {
+    yield put(actions.failureMangas());
+    yield call(callback, { title: e.status, text: e.detail });
+  }
 }
 
 export function* watcherManga(): Generator<
@@ -15,10 +24,7 @@ export function* watcherManga(): Generator<
   void,
   Record<string, unknown>
 > {
-  while (true) {
-    yield take(types.MANGA_CALL_REQUEST);
-    yield fork(getManga);
-  }
+  yield takeLatest(types.MANGA_CALL_REQUEST, getManga);
 }
 
 export default watcherManga;

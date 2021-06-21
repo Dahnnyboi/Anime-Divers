@@ -57,3 +57,12 @@ export interface ACTION {
   type: string;
   payload?: Record<string, unknown>;
 }
+
+export interface ACTION_FETCH {
+  type: string;
+  payload?: Record<string, unknown>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  fetch: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  callback: any;
+}

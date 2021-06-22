@@ -1,4 +1,4 @@
-import * as types from "./anime.types";
+import * as types from "./animes.types";
 
 const initialState = {
   isLoading: false,

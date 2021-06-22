@@ -1,7 +1,7 @@
 import { call, put, StrictEffect, takeLatest } from "redux-saga/effects";
 
-import * as types from "./manga.types";
-import * as actions from "./manga.actions";
+import * as types from "./mangas.types";
+import * as actions from "./mangas.actions";
 
 function* getManga(
   action: ACTION_FETCH

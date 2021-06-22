@@ -18,10 +18,10 @@ function useGetTrending(): AnimesData {
   const { alertFailure } = useAlerts();
   const dispatch = useAppDispatch();
   const { data: dataAnime, isLoading: loadingAnime } = useAppSelector(
-    (state) => state.anime
+    (state) => state.animes
   );
   const { data: dataManga, isLoading: loadingManga } = useAppSelector(
-    (state) => state.manga
+    (state) => state.mangas
   );
 
   // TODO: api request for params, error callback

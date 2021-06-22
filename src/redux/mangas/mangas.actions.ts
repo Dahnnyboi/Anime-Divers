@@ -1,4 +1,4 @@
-import * as types from "./manga.types";
+import * as types from "./mangas.types";
 
 export function requestManga(
   fetchFunction: Function,

@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import animeReducer from "./anime/anime.reducer";
-import mangaReducer from "./manga/manga.reducer";
+import animeReducer from "./animes/animes.reducer";
+import mangaReducer from "./mangas/mangas.reducer";
 
 export default combineReducers({
-  anime: animeReducer,
-  manga: mangaReducer,
+  animes: animeReducer,
+  mangas: mangaReducer,
 });

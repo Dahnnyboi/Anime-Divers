@@ -1,7 +1,7 @@
 import { takeLatest, call, put, StrictEffect } from "redux-saga/effects";
 
-import * as types from "./anime.types";
-import * as actions from "./anime.actions";
+import * as types from "./animes.types";
+import * as actions from "./animes.actions";
 
 function* getAnime(
   action: ACTION_FETCH

@@ -6,8 +6,7 @@ interface alertProps {
   options: Record<string, unknown>;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function useAlerts(): Record<string, any> {
+function useAlerts(): Record<string, Any> {
   const successAlert = async ({ title, text, options }: alertProps) => {
     await swal.fire({
       title: title || "Success",

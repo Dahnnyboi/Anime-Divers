@@ -24,8 +24,7 @@ function LandingTrendingAnime({
 
       <AnimeCardsContainer loading={loading}>
         {!isEmpty(data) &&
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          data.map((anime: any, index: number) => {
+          data.map((anime: Any, index: number) => {
             const { id } = anime;
             const { titles, synopsis, posterImage } = anime.attributes;
             const { en_us, en_jp } = titles;

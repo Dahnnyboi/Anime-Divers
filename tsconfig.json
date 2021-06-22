@@ -17,7 +17,8 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "rootDir": "src",
-    "outDir": "build"
+    "outDir": "build",
+    "typeRoots": ["src/global.d.ts"]
   },
-  "include": ["src"]
+  "include": ["src/*"]
 }

@@ -1,8 +1,6 @@
 import React, { Suspense } from "react";
 import {
-  INTERFACE_IMAGE_TYPE,
   IMAGE_TYPE_POSTER,
-  INTERFACE_IMAGE_SIZE,
   IMAGE_POSTER,
   IMAGE_COVER,
 } from "configs/constants";

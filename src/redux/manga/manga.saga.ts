@@ -1,5 +1,4 @@
 import { call, put, StrictEffect, takeLatest } from "redux-saga/effects";
-import { ACTION_FETCH } from "configs/constants";
 
 import * as types from "./manga.types";
 import * as actions from "./manga.actions";
@@ -12,8 +11,7 @@ function* getManga(
     const data = yield call(fetch);
 
     yield put(actions.successManga(data));
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (e: any) {
+  } catch (e: Any) {
     yield put(actions.failureMangas());
     yield call(callback, { title: e.status, text: e.detail });
   }

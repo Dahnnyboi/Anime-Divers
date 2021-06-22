@@ -1,10 +1,10 @@
 import React from "react";
-import { ROUTES } from "configs/constants";
 import { Switch, Route } from "react-router-dom";
 
 interface renderRoutesProps {
   routes: Array<ROUTES>;
 }
+
 function RenderRoutes({ routes }: renderRoutesProps): JSX.Element {
   return (
     <Switch>

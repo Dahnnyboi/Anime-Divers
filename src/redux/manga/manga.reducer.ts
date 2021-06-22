@@ -1,4 +1,3 @@
-import { ACTION } from "configs/constants";
 import * as types from "./manga.types";
 
 const initialState = {

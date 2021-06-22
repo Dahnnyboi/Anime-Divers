@@ -2,14 +2,12 @@ import React, { FunctionComponent, ComponentClass } from "react";
 import { truncate } from "lodash";
 import { Card } from "react-bootstrap";
 import { ImageSuspense, Image } from "components/Image";
-import { INTERFACE_IMAGE_TYPE, INTERFACE_IMAGE_SIZE } from "configs/constants";
 
 interface AnimeCardsProps {
   tag?:
     | string
     | FunctionComponent<{ className: string | undefined }>
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    | ComponentClass<{ className: string | undefined }, any>;
+    | ComponentClass<{ className: string | undefined }, Any>;
   imageType?:
     | INTERFACE_IMAGE_TYPE["POSTER"]
     | INTERFACE_IMAGE_TYPE["COVER"]

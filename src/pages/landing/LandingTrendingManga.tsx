@@ -24,8 +24,7 @@ function LandingTrendingManga({
         <h4 className="text-white">Trending Manga</h4>
         <AnimeCardsContainer loading={loading}>
           {!isEmpty(data) &&
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            data.map((manga: any, index: number) => {
+            data.map((manga: Any, index: number) => {
               const { id } = manga;
               const { titles, synopsis, posterImage } = manga.attributes;
               const { en_us, en_jp, ja_jp } = titles;

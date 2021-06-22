@@ -1,4 +1,3 @@
-import { ACTION, ACTION_FETCH } from "configs/constants";
 import * as types from "./manga.types";
 
 export function requestManga(

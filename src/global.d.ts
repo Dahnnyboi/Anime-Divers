@@ -35,9 +35,15 @@ declare interface INTERFACE_IMAGE_SIZE {
   TINY: "tiny";
 }
 
+interface ROUTES_PROPS {
+  match?: Any;
+  history?: Any;
+  location?: Any;
+}
+
 declare interface ROUTES {
   path: string;
-  component: React.ComponentType;
+  Component: FC<ROUTES_PROPS>;
   exact?: boolean;
   routes?: Array<ROUTES>;
 }

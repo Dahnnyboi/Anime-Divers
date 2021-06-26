@@ -8,7 +8,7 @@ const AnimePage = Loadable({
 
 const anime = {
   path: "/anime",
-  component: AnimePage,
+  Component: AnimePage,
 };
 
 export default anime;

@@ -1,21 +1,38 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 
 interface renderRoutesProps {
   routes: Array<ROUTES>;
+  match: Any;
+  history: Any;
+  location: Any;
 }
 
-function RenderRoutes({ routes }: renderRoutesProps): JSX.Element {
+function RenderRoutes({
+  routes,
+  match,
+  history,
+  location,
+}: renderRoutesProps): JSX.Element {
   return (
     <Switch>
       {routes.map((route, index) => {
-        const { path, component, exact } = route;
+        const { path, Component, exact } = route;
         return (
           <Route
             key={index}
             exact={exact || false}
             path={path}
-            component={component}
+            render={(props) => {
+              return (
+                <Component
+                  {...props}
+                  match={match}
+                  history={history}
+                  location={location}
+                />
+              );
+            }}
           />
         );
       })}
@@ -23,4 +40,4 @@ function RenderRoutes({ routes }: renderRoutesProps): JSX.Element {
   );
 }
 
-export default RenderRoutes;
+export default withRouter(RenderRoutes);

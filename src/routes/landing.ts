@@ -9,7 +9,7 @@ const LandingComponent = Loadable({
 const landing = {
   exact: true,
   path: "/",
-  component: LandingComponent,
+  Component: LandingComponent,
 };
 
 export default landing;

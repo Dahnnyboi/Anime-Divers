@@ -1,0 +1,21 @@
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+
+  .image-container__image {
+    filter: brightness(50%);
+
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .image-container__text {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

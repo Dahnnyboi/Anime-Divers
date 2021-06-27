@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { capitalize } from "lodash";
 
@@ -55,6 +55,10 @@ function RenderRoutes({
           />
         );
       })}
+
+      <Route path="*">
+        <Redirect to="/not-found" />
+      </Route>
     </Switch>
   );
 }

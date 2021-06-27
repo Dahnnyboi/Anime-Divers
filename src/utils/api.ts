@@ -10,6 +10,10 @@ api.interceptors.response.use(
     return response;
   },
   (error) => {
+    if (error.response.status === 404) {
+      window.location.replace("/not-found");
+    }
+
     return Promise.reject(error.response.data.errors[0]);
   }
 );

@@ -1,5 +1,6 @@
 import landing from "./landing";
 import anime from "./anime";
+import notFound from "./not-found";
 
 const routes: Array<ROUTES> = [
   {
@@ -7,6 +8,9 @@ const routes: Array<ROUTES> = [
   },
   {
     ...anime,
+  },
+  {
+    ...notFound,
   },
 ];
 

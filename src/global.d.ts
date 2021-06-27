@@ -43,7 +43,7 @@ interface ROUTES_PROPS {
 
 declare interface ROUTES {
   path: string;
-  Component: FC<ROUTES_PROPS>;
+  Component?: FC<ROUTES_PROPS>;
   exact?: boolean;
   routes?: Array<ROUTES>;
 }

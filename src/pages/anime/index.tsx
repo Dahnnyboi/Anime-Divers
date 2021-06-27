@@ -1,8 +1,16 @@
 import React from "react";
-import { LoadingPage } from "components/Loadings";
+import RenderRoutes from "utils/RenderRoutes";
 
-function Index(): JSX.Element {
-  return <LoadingPage />;
+interface indexProps {
+  routes: Array<ROUTES>;
+}
+
+function Index({ routes }: indexProps): JSX.Element {
+  return (
+    <div>
+      <RenderRoutes routes={routes} />
+    </div>
+  );
 }
 
 export default Index;

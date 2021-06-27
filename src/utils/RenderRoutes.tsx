@@ -19,7 +19,7 @@ function RenderRoutes({
   return (
     <Switch>
       {routes.map((route, index) => {
-        const { path, Component, exact } = route;
+        const { path, Component, exact, routes: nestedRoutes } = route;
         return (
           <Route
             key={index}
@@ -48,6 +48,7 @@ function RenderRoutes({
                     match={match}
                     history={history}
                     location={location}
+                    routes={nestedRoutes}
                   />
                 </>
               );

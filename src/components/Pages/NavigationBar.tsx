@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import cx from "classnames";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FaAngleDoubleDown } from "react-icons/fa";
@@ -25,7 +26,7 @@ function NavigationBar({
           className="text-secondary"
           style={{ fontWeight: "bold", letterSpacing: "1px" }}
         >
-          Anime Divers
+          <Link to="/">Anime Divers</Link>
         </Navbar.Brand>
         <Navbar.Toggle
           bsPrefix="navbar-toggler border-0"
@@ -34,8 +35,11 @@ function NavigationBar({
           <FaAngleDoubleDown />
         </Navbar.Toggle>
         <Navbar.Collapse>
-          <Nav.Link className="ml-auto text-secondary p-0 py-2">
-            Animes
+          <Nav.Link className="ml-auto text-secondary p-2 py-2">
+            <Link to="/anime">Animes</Link>
+          </Nav.Link>
+          <Nav.Link className="ml-auto text-secondary p-2 py-2">
+            <Link to="/manga">Mangas</Link>
           </Nav.Link>
         </Navbar.Collapse>
       </Container>

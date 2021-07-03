@@ -1,5 +1,6 @@
 import React from "react";
 import "styles/styles.scss";
+import "styles/react-datetime.scss";
 
 import { Provider } from "react-redux";
 import { PageLayout } from "components/Layouts";

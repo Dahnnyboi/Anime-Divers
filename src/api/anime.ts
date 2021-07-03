@@ -1,9 +1,8 @@
 import http, { APISuccess } from "utils/api";
+import { formatSearch } from "utils/query";
 
-export function getAnimeList(
-  params?: Record<string, unknown>
-): Promise<APISuccess> {
-  return http("GET", "/anime", null, params);
+export function getAnimeList(params?: string): Promise<APISuccess> {
+  return http("GET", "/anime", null, formatSearch(params));
 }
 
 export function getTrendingAnimeList(

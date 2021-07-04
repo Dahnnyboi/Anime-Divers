@@ -8,7 +8,7 @@ interface CenterLayoutProps {
 
 function CenterLayout({ children, className }: CenterLayoutProps): JSX.Element {
   return (
-    <Container fluid="md" className={className}>
+    <Container fluid="sm" className={className}>
       <Row>{children}</Row>
     </Container>
   );

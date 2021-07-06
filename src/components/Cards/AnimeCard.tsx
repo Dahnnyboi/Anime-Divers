@@ -45,7 +45,7 @@ function AnimeCards({
           <Image source={image} />
         </ImageSuspense>
       )}
-      <Card.Body>
+      <Card.Body style={{ minHeight: "180px" }}>
         <Card.Title>{title}</Card.Title>
         <Card.Text className="text-muted">
           <small>{truncate(description, { length: 120 })}</small>

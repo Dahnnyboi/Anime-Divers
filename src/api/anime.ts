@@ -1,8 +1,8 @@
 import http, { APISuccess } from "utils/api";
-import { formatSearch } from "utils/query";
+import { formatSearchObject } from "utils/query";
 
 export function getAnimeList(params?: string): Promise<APISuccess> {
-  return http("GET", "/anime", null, formatSearch(params));
+  return http("GET", "/anime", null, formatSearchObject(params));
 }
 
 export function getTrendingAnimeList(

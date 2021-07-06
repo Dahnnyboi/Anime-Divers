@@ -35,6 +35,11 @@ function FilterRadio({
 
             delete searchQuery[name];
 
+            if (searchQuery.limit && searchQuery.offset) {
+              delete searchQuery.limit;
+              delete searchQuery.offset;
+            }
+
             history.push({
               pathname,
               search: queryToSearch(searchQuery),
@@ -53,6 +58,11 @@ function FilterRadio({
 
               if (value) {
                 searchQuery[name] = value;
+
+                if (searchQuery.limit && searchQuery.offset) {
+                  delete searchQuery.limit;
+                  delete searchQuery.offset;
+                }
               } else {
                 delete searchQuery[name];
               }

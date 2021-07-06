@@ -8,15 +8,12 @@ interface AnimeCardsProps {
     | string
     | FunctionComponent<{ className: string | undefined }>
     | ComponentClass<{ className: string | undefined }, Any>;
-  imageType?:
-    | INTERFACE_IMAGE_TYPE["POSTER"]
-    | INTERFACE_IMAGE_TYPE["COVER"]
-    | null;
+  imageType?: IMAGE_TYPE["POSTER"] | IMAGE_TYPE["COVER"] | null;
   imageSize?:
-    | INTERFACE_IMAGE_SIZE["LARGE"]
-    | INTERFACE_IMAGE_SIZE["MEDIUM"]
-    | INTERFACE_IMAGE_SIZE["SMALL"]
-    | INTERFACE_IMAGE_SIZE["TINY"]
+    | IMAGE_SIZE["LARGE"]
+    | IMAGE_SIZE["MEDIUM"]
+    | IMAGE_SIZE["SMALL"]
+    | IMAGE_SIZE["TINY"]
     | null;
   image?: string;
   title: string;

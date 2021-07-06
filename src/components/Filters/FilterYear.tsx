@@ -26,6 +26,12 @@ function FilterYear({ defaultValue, name }: FilterYearProps): JSX.Element {
               variant="primary"
               onClick={() => {
                 delete searchQuery[name];
+
+                if (searchQuery.limit && searchQuery.offset) {
+                  delete searchQuery.limit;
+                  delete searchQuery.offset;
+                }
+
                 props.onChange({ target: { value: "" } });
               }}
               disabled={!props.value}
@@ -45,6 +51,11 @@ function FilterYear({ defaultValue, name }: FilterYearProps): JSX.Element {
           const year = moment(value).format("YYYY");
 
           searchQuery[name] = year;
+
+          if (searchQuery.limit && searchQuery.offset) {
+            delete searchQuery.limit;
+            delete searchQuery.offset;
+          }
         } else {
           delete searchQuery[name];
         }

@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "redux/hooks";
 import { requestAnime } from "redux/root.actions";
 
 interface AnimesData {
-  animes: Array<Record<string, unknown>>;
+  animes: Any;
   isLoading: boolean;
 }
 

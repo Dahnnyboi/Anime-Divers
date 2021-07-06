@@ -20,7 +20,7 @@ interface IndexProps {
 function Index({ location }: IndexProps): JSX.Element {
   const { search } = location;
   const { animes, isLoading } = useGetAnimeList(search);
-  console.log(animes, isLoading);
+  const { links } = animes;
 
   return (
     <CenterLayout className="my-2">
@@ -52,7 +52,7 @@ function Index({ location }: IndexProps): JSX.Element {
           nostrum. Commodi harum sunt labore possimus.
         </SectionContentBody>
         <SectionContentFooter>
-          <FilterPagination />
+          <FilterPagination links={links} isLoading={isLoading} />
         </SectionContentFooter>
       </SectionContent>
     </CenterLayout>

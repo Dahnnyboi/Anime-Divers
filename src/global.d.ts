@@ -59,3 +59,10 @@ declare interface ACTION_FETCH {
   fetch: Any;
   callback: Any;
 }
+
+declare interface LINKS {
+  first?: string;
+  next?: string;
+  prev: string;
+  last?: string;
+}

@@ -35,6 +35,11 @@ function FilterSelect({
 
             if (value) {
               searchQuery[name] = value;
+
+              if (searchQuery.limit && searchQuery.offset) {
+                delete searchQuery.limit;
+                delete searchQuery.offset;
+              }
             } else {
               delete searchQuery[name];
             }
@@ -62,6 +67,11 @@ function FilterSelect({
             onClick={() => {
               delete searchQuery[name];
               setSelected("");
+
+              if (searchQuery.limit && searchQuery.offset) {
+                delete searchQuery.limit;
+                delete searchQuery.offset;
+              }
 
               history.push({
                 pathname,

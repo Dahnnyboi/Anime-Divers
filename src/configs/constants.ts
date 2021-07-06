@@ -8,14 +8,14 @@ export const IMAGE_SIZE_MEDIUM = "medium";
 export const IMAGE_SIZE_SMALL = "small";
 export const IMAGE_SIZE_TINY = "tiny";
 
-export const IMAGE_POSTER: IImageSizes = {
+export const IMAGE_POSTER: IMAGE_SIZES = {
   large: { width: 550, height: 780 },
   medium: { width: 390, height: 554 },
   small: { width: 284, height: 402 },
   tiny: { width: 110, height: 156 },
 };
 
-export const IMAGE_COVER: IImageSizes = {
+export const IMAGE_COVER: IMAGE_SIZES = {
   large: { width: 3360, height: 800 },
   small: { width: 1680, height: 400 },
   tiny: { width: 840, height: 220 },

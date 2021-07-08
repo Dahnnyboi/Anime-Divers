@@ -10,3 +10,7 @@ export function getTrendingAnimeList(
 ): Promise<APISuccess> {
   return http("GET", "/trending/anime", null, params);
 }
+
+export function getSingleAnime(id: string): Promise<APISuccess> {
+  return http("GET", `/anime/${id}`);
+}

@@ -40,7 +40,7 @@ declare interface ROUTES {
 
 declare interface ACTION {
   type: string;
-  payload?: Record<string, unknown>;
+  payload?: Record<string, unknown> | unknown;
 }
 
 declare interface ACTION_FETCH {

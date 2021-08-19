@@ -11,11 +11,13 @@ declare interface IMAGE_SIZES {
   medium?: IMAGE_DIMENSION;
   small?: IMAGE_DIMENSION;
   tiny?: IMAGE_DIMENSION;
+  original?: IMAGE_DIMENSION;
 }
 
 declare interface IMAGE_TYPE {
   POSTER: "poster";
   COVER: "cover";
+  THUMBNAIL: "thumbnail";
 }
 
 declare interface IMAGE_SIZE {
@@ -23,6 +25,7 @@ declare interface IMAGE_SIZE {
   MEDIUM: "medium";
   SMALL: "small";
   TINY: "tiny";
+  ORIGINAL: "original";
 }
 
 interface ROUTES_PROPS {

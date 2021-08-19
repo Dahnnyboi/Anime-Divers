@@ -1,0 +1,12 @@
+.loading {
+  position: relative;
+  width: 100wh;
+  flex-grow: 1;
+
+  .loading-spinner {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+  }
+}

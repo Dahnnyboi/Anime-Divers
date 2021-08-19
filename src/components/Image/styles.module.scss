@@ -1,0 +1,45 @@
+@import "../../styles//variables.scss";
+
+.image-header {
+  margin-bottom: 48px;
+
+  .image-header__container {
+    position: relative;
+
+    .image-header__logo {
+      position: absolute;
+      bottom: -48px;
+      left: 50%;
+      transform: translate(-50%);
+
+      width: 96px;
+      height: 96px;
+
+      .image-header__logo__image {
+        object-fit: cover;
+        border-radius: 100%;
+
+        border: solid 4px $light;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $md) {
+  .image-header {
+    margin-bottom: 64px;
+
+    .image-header__container {
+      .image-header__logo {
+        width: 164px;
+        height: 164px;
+
+        bottom: -64px;
+
+        .image-header__logo__image {
+          border: solid 8px $light;
+        }
+      }
+    }
+  }
+}

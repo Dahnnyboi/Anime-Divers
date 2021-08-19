@@ -18,16 +18,27 @@ import { Button } from "react-bootstrap";
 interface FilterPaginationProps {
   links: LINKS;
   isLoading: boolean;
+  idToScroll?: string;
 }
 
 function FilterPagination({
   links,
   isLoading,
+  idToScroll,
 }: FilterPaginationProps): JSX.Element {
   const { first, prev, next, last } = links || {};
   const history = useHistory();
   const { pathname, search } = useLocation();
   const searchQuery = searchToQuery(search);
+
+  function handleScroll(): void {
+    if (idToScroll) {
+      const elmnt = document.getElementById(idToScroll);
+      if (elmnt) {
+        elmnt.scrollIntoView();
+      }
+    }
+  }
 
   function handleFirst(): void {
     if (first && searchQuery.limit && searchQuery.offset) {
@@ -39,6 +50,8 @@ function FilterPagination({
         search: queryToSearch(searchQuery),
       });
     }
+
+    handleScroll();
   }
 
   function handlePrev(): void {
@@ -55,6 +68,8 @@ function FilterPagination({
         search: queryToSearch(searchQuery),
       });
     }
+
+    handleScroll();
   }
 
   function handleNext(): void {
@@ -71,6 +86,8 @@ function FilterPagination({
         search: queryToSearch(searchQuery),
       });
     }
+
+    handleScroll();
   }
 
   function handleLast(): void {
@@ -87,6 +104,8 @@ function FilterPagination({
         search: queryToSearch(searchQuery),
       });
     }
+
+    handleScroll();
   }
 
   return (
@@ -127,5 +146,9 @@ function FilterPagination({
     </div>
   );
 }
+
+FilterPagination.defaultProps = {
+  idToScroll: "",
+};
 
 export default FilterPagination;

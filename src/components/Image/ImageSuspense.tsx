@@ -3,16 +3,23 @@ import {
   IMAGE_TYPE_POSTER,
   IMAGE_POSTER,
   IMAGE_COVER,
+  IMAGE_TYPE_COVER,
+  IMAGE_THUMBNAIL,
 } from "configs/constants";
 
 interface ImageSuspenseProps {
   children: React.ReactNode;
-  imageType?: IMAGE_TYPE["POSTER"] | IMAGE_TYPE["COVER"] | null;
+  imageType?:
+    | IMAGE_TYPE["POSTER"]
+    | IMAGE_TYPE["COVER"]
+    | IMAGE_TYPE["THUMBNAIL"]
+    | null;
   imageSize?:
     | IMAGE_SIZE["LARGE"]
     | IMAGE_SIZE["MEDIUM"]
     | IMAGE_SIZE["SMALL"]
     | IMAGE_SIZE["TINY"]
+    | IMAGE_SIZE["ORIGINAL"]
     | null;
   defaultHeight?: number;
 }
@@ -26,10 +33,17 @@ function ImageSuspense({
   let height: number | undefined;
 
   if (imageType && imageSize) {
-    const data =
-      imageType === IMAGE_TYPE_POSTER
-        ? IMAGE_POSTER[imageSize]
-        : IMAGE_COVER[imageSize];
+    let data;
+    switch (imageType) {
+      case IMAGE_TYPE_POSTER:
+        data = IMAGE_POSTER[imageSize];
+        break;
+      case IMAGE_TYPE_COVER:
+        data = IMAGE_COVER[imageSize];
+        break;
+      default:
+        data = IMAGE_THUMBNAIL[imageSize];
+    }
     height = data?.height;
   } else {
     height = defaultHeight;

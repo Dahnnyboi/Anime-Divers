@@ -10,10 +10,16 @@ export function queryToSearch(search: ParsedQs): string {
 }
 
 export function formatSearchObject(
-  search: string | undefined
+  search: string | undefined,
+  additional?: Record<string, string>,
+  sortByNumber?: boolean
 ): Record<string, string> {
   const queryObject = searchToQuery(search || "");
   const format: Any = {};
+
+  if (additional) {
+    Object.assign(queryObject, additional);
+  }
 
   Object.keys(queryObject).forEach((key) => {
     if (key === "limit" || key === "offset") {
@@ -22,6 +28,8 @@ export function formatSearchObject(
       format[`filter[${key}]`] = queryObject[key];
     }
   });
+
+  if (sortByNumber) format.sort = "number";
 
   return format;
 }

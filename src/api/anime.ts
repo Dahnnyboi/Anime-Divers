@@ -14,3 +14,15 @@ export function getTrendingAnimeList(
 export function getSingleAnime(id: string): Promise<APISuccess> {
   return http("GET", `/anime/${id}`);
 }
+
+export function getAnimeEpisodesList(
+  additional: Record<string, string>,
+  params?: string
+): Promise<APISuccess> {
+  return http(
+    "GET",
+    "/episodes",
+    null,
+    formatSearchObject(params, additional, true)
+  );
+}

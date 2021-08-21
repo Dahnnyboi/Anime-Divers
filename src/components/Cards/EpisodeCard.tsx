@@ -17,6 +17,8 @@ interface EpisodeCardProps {
   description: string;
   className?: string;
   border?: boolean;
+  onClick?: Function;
+  styles?: Record<string, string>;
 }
 
 function EpisodesCard({
@@ -27,12 +29,14 @@ function EpisodesCard({
   description,
   className,
   border,
+  onClick,
+  styles,
   ...rest
 }: EpisodeCardProps): JSX.Element {
   return React.createElement(
     "div",
-    { className, ...rest },
-    <Card className={border ? "" : "border-0"}>
+    { className, onClick, ...rest },
+    <Card style={styles} className={border ? "" : "border-0"}>
       {image ? (
         <ImageSuspense
           imageType={IMAGE_TYPE_THUMBNAIL}
@@ -63,6 +67,8 @@ EpisodesCard.defaultProps = {
   image: false,
   className: "",
   border: true,
+  styles: {},
+  onClick: () => {},
 };
 
 export default EpisodesCard;

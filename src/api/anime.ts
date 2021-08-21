@@ -26,3 +26,7 @@ export function getAnimeEpisodesList(
     formatSearchObject(params, additional, true)
   );
 }
+
+export function getAnimeEpisode(id: Number): Promise<APISuccess> {
+  return http("GET", `/episodes/${id}`);
+}

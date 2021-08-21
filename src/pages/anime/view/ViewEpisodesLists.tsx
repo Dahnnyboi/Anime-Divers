@@ -7,6 +7,8 @@ import {
 import { Card } from "react-bootstrap";
 import { isEmpty } from "lodash";
 import { FilterPagination } from "components/Filters";
+import useGetSingleEpisode from "./useGetSingleEpisode";
+import ViewEpisodeModal from "./ViewEpisodeModal";
 
 interface ViewEpisodesListsProps {
   episodes: Array<Any>;
@@ -19,6 +21,13 @@ function ViewEpisodesLists({
   isLoading,
   links,
 }: ViewEpisodesListsProps): JSX.Element {
+  const {
+    isOpen,
+    toggle,
+    episode,
+    isLoading: episodeLoading,
+  } = useGetSingleEpisode();
+
   return (
     <Card className="w-100 p-3 mt-3">
       <Card.Body>
@@ -26,7 +35,8 @@ function ViewEpisodesLists({
 
         <EpisodesCardsContainer loading={isLoading}>
           {!isEmpty(episodes) &&
-            episodes.map(({ attributes }: Any, index: number) => {
+            episodes.map((data: Any, index: number) => {
+              const { id, attributes } = data;
               const {
                 canonicalTitle,
                 description,
@@ -45,8 +55,9 @@ function ViewEpisodesLists({
                     title={canonicalTitle}
                     date={created_at}
                     description={description}
-                    border={false}
-                    className="my-2 "
+                    className="my-2 pe-auto"
+                    styles={{ cursor: "pointer" }}
+                    onClick={() => toggle(id)}
                   />
                 </EpisodesCardsContent>
               );
@@ -59,6 +70,13 @@ function ViewEpisodesLists({
           />
         </EpisodesCardsContainer>
       </Card.Body>
+
+      <ViewEpisodeModal
+        isOpen={isOpen}
+        toggle={toggle}
+        isLoading={episodeLoading}
+        episode={episode}
+      />
     </Card>
   );
 }

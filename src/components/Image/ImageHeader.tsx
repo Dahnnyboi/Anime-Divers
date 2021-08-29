@@ -15,7 +15,10 @@ interface ImageHeaderProps {
   logo: string;
 }
 
-function ImageHeader({ banner, logo }: ImageHeaderProps): JSX.Element {
+function ImageHeader({
+  banner = "",
+  logo = "",
+}: ImageHeaderProps): JSX.Element {
   return (
     <div className={styles["image-header"]}>
       <div className={styles["image-header__container"]}>
@@ -38,10 +41,17 @@ function ImageHeader({ banner, logo }: ImageHeaderProps): JSX.Element {
             imageType={IMAGE_TYPE_POSTER}
             imageSize={IMAGE_SIZE_TINY}
           >
-            <Image
-              source={logo}
-              className={cx(styles["image-header__logo__image"], "w-100 h-100")}
-            />
+            {logo ? (
+              <Image
+                source={logo}
+                className={cx(
+                  styles["image-header__logo__image"],
+                  "w-100 h-100"
+                )}
+              />
+            ) : (
+              <div className={styles["image-header__logo__image"]} />
+            )}
           </ImageSuspense>
         </div>
       </div>

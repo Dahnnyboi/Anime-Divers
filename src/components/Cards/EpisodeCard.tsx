@@ -19,6 +19,7 @@ interface EpisodeCardProps {
   border?: boolean;
   onClick?: Function;
   styles?: Record<string, string>;
+  header?: string;
 }
 
 function EpisodesCard({
@@ -31,6 +32,7 @@ function EpisodesCard({
   border,
   onClick,
   styles,
+  header,
   ...rest
 }: EpisodeCardProps): JSX.Element {
   return React.createElement(
@@ -53,7 +55,9 @@ function EpisodesCard({
 
       <Card.Body style={{ minHeight: "180px" }}>
         <Card.Title>{title}</Card.Title>
-        <p className="text-dark mb-0">Episode: {episodeNumber}</p>
+        <p className="text-dark mb-0">
+          {header}: {episodeNumber}
+        </p>
         <p className="text-dark">{labelDate(date)}</p>
         <Card.Text className="text-muted">
           <small>{truncate(description, { length: 120 })}</small>
@@ -68,6 +72,7 @@ EpisodesCard.defaultProps = {
   className: "",
   border: true,
   styles: {},
+  header: "Episode",
   onClick: () => {},
 };
 

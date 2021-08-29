@@ -11,6 +11,10 @@ function Image({ source, className }: imageProps): JSX.Element {
     srcList: source,
   });
 
+  if (source === undefined) {
+    return <div className="w-100 bg-primary" style={{ width: "320px" }} />;
+  }
+
   return <img src={src || ""} alt={source} className={className || ""} />;
 }
 

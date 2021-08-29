@@ -56,6 +56,6 @@ declare interface ACTION_FETCH {
 declare interface LINKS {
   first?: string;
   next?: string;
-  prev: string;
+  prev?: string;
   last?: string;
 }

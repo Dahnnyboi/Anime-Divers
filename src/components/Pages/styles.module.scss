@@ -1,0 +1,11 @@
+@import "../../styles/variables.scss";
+
+.navigation-item {
+  display: block;
+}
+
+@media screen and (min-width: $lg) {
+  .navigation-item {
+    display: inline;
+  }
+}

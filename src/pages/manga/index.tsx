@@ -6,11 +6,7 @@ interface indexProps {
 }
 
 function Index({ routes }: indexProps): JSX.Element {
-  return (
-    <div>
-      <RenderRoutes routes={routes} />
-    </div>
-  );
+  return <RenderRoutes routes={routes} />;
 }
 
 export default Index;

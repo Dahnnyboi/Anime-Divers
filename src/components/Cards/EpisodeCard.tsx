@@ -53,7 +53,7 @@ function EpisodesCard({
         />
       )}
 
-      <Card.Body style={{ minHeight: "180px" }}>
+      <Card.Body>
         <Card.Title>{title}</Card.Title>
         <p className="text-dark mb-0">
           {header}: {episodeNumber}

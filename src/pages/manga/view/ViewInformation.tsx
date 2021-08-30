@@ -33,11 +33,9 @@ function ViewInformation({ synopsis }: ViewInformationProps): JSX.Element {
     <Card id="scroll" className="w-100 p-3">
       <Card.Body>
         <Card.Title>Manga Information</Card.Title>
-        <Card.Text>
-          <ViewInformationFields title="Synopsis">
-            {synopsis}
-          </ViewInformationFields>
-        </Card.Text>
+        <ViewInformationFields title="Synopsis">
+          {synopsis}
+        </ViewInformationFields>
       </Card.Body>
     </Card>
   );

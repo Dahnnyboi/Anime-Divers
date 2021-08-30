@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { Image, ImageSuspense } from "components/Image";
 import wallpaper from "assets/images/anime-wallpaper.jpg";
 import styles from "./landing.module.scss";
@@ -21,8 +21,12 @@ function LandingShowcase(): JSX.Element {
           you&apos;re watching, discover new anime and socialize with other
           fans.
         </p>
-        <Button variant="primary">Go to Anime</Button>{" "}
-        <Button variant="outline-primary">Go to Anime</Button>
+        <Link className="btn btn-primary" to="/anime">
+          Go to Anime
+        </Link>{" "}
+        <Link className="btn btn-primary" to="/manga">
+          Go to Manga
+        </Link>
       </div>
     </div>
   );

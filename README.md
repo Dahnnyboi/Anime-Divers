@@ -13,6 +13,8 @@ Consuming <a href="https://kitsu.docs.apiary.io/">OpenWeather API</a> using Reac
 
 ## Live Demo
 
+Visit at [https://anime-divers.herokuapp.com/](https://anime-divers.herokuapp.com/)
+
 ## Installation
 
 Requirements

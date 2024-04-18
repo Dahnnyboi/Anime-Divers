@@ -1,6 +1,6 @@
 # Anime Divers
 
-Consuming <a href="https://kitsu.docs.apiary.io/">OpenWeather API</a> using React JS
+Consuming <a href="https://kitsu.docs.apiary.io/">Kitsu API</a> using React JS
 
 ![Anime Divers Image](./markdown/showcase.png "Anime Divers")
 

@@ -13,7 +13,7 @@ Consuming <a href="https://kitsu.docs.apiary.io/">Kitsu API</a> using React JS
 
 ## Live Demo
 
-Visit at [https://anime-divers.herokuapp.com/](https://anime-divers.herokuapp.com/)
+Visit at [https://anime-divers.onrender.com](https://anime-divers.onrender.com)
 
 ## Installation
 
@@ -32,6 +32,7 @@ https://github.com/Dahnnyboi/Anime-Divers.git
 rename .env-sample to .env file
 
 ```
+nvm use
 npm install
 npm run start
 ```

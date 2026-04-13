@@ -1,5 +1,12 @@
 # Migration Context
 
+## Conventions
+Always follow these rules on every commit and PR — loaded from `.claude/rules/`:
+- **Commits** → `.claude/rules/commit-convention.md` — `<type>(scope): description`, types: feat/fix/docs/refactor/test/chore
+- **PRs** → `.claude/rules/pr-convention.md` — same title format, body: What / How / Testing, one batch = one PR
+
+---
+
 ## Overview
 Migrating **Anime Divers** from CRA + React 17 + Redux + Node 14 → **Next.js 15 + React 19 + TypeScript 5 + Node 24 + native fetch**.
 Deployment: Render.com → **GitHub Actions + Digital Ocean**.

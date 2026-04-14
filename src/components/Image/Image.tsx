@@ -6,7 +6,7 @@ interface imageProps {
   className?: string;
 }
 
-function Image({ source, className }: imageProps): JSX.Element {
+function Image({ source, className = "w-100" }: imageProps): JSX.Element {
   const { src } = useImage({
     srcList: source,
   });
@@ -17,9 +17,5 @@ function Image({ source, className }: imageProps): JSX.Element {
 
   return <img src={src || ""} alt={source} className={className || ""} />;
 }
-
-Image.defaultProps = {
-  className: "w-100",
-};
 
 export default Image;

@@ -6,7 +6,7 @@ interface FooterProps {
   className?: string;
 }
 
-function Footer({ className }: FooterProps): JSX.Element {
+function Footer({ className = "" }: FooterProps): JSX.Element {
   return (
     <div className={cx("py-3 bg-primary", className)}>
       <CenterLayout>
@@ -24,9 +24,5 @@ function Footer({ className }: FooterProps): JSX.Element {
     </div>
   );
 }
-
-Footer.defaultProps = {
-  className: "",
-};
 
 export default Footer;

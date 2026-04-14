@@ -11,7 +11,7 @@ interface FilterInputProps {
 }
 
 function FilterInput({
-  defaultValue,
+  defaultValue = "",
   title,
   name,
   type,
@@ -80,9 +80,5 @@ function FilterInput({
     </div>
   );
 }
-
-FilterInput.defaultProps = {
-  defaultValue: "",
-};
 
 export default FilterInput;

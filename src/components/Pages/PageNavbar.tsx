@@ -10,7 +10,7 @@ interface NavigationBarProps {
 }
 
 function NavigationBar({
-  className,
+  className = "",
   ...rest
 }: NavigationBarProps): JSX.Element {
   return (
@@ -59,9 +59,5 @@ function NavigationBar({
     </Navbar>
   );
 }
-
-NavigationBar.defaultProps = {
-  className: "",
-};
 
 export default NavigationBar;

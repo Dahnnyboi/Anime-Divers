@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 import { useLocation, useHistory } from "react-router-dom";

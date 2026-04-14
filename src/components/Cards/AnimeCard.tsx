@@ -1,3 +1,4 @@
+"use client";
 import React, { FunctionComponent, ComponentClass } from "react";
 import { truncate } from "lodash";
 import { Card } from "react-bootstrap";

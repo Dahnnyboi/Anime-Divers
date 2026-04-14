@@ -12,7 +12,7 @@ interface FilterRadioProps {
 }
 
 function FilterRadio({
-  defaultValue,
+  defaultValue = "",
   name,
   title,
   source,
@@ -84,9 +84,5 @@ function FilterRadio({
     </div>
   );
 }
-
-FilterRadio.defaultProps = {
-  defaultValue: "",
-};
 
 export default FilterRadio;

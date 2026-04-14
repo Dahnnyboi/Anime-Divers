@@ -24,7 +24,7 @@ interface FilterPaginationProps {
 function FilterPagination({
   links,
   isLoading,
-  idToScroll,
+  idToScroll = "",
 }: FilterPaginationProps): JSX.Element {
   const { first, prev, next, last } = links || {};
   const history = useHistory();
@@ -146,9 +146,5 @@ function FilterPagination({
     </div>
   );
 }
-
-FilterPagination.defaultProps = {
-  idToScroll: "",
-};
 
 export default FilterPagination;

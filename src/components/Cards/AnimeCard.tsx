@@ -15,7 +15,7 @@ interface AnimeCardsProps {
     | IMAGE_SIZE["SMALL"]
     | IMAGE_SIZE["TINY"]
     | null;
-  image?: string;
+  image?: string | false;
   title: string;
   description: string;
   className?: string;
@@ -23,14 +23,14 @@ interface AnimeCardsProps {
 }
 
 function AnimeCards({
-  tag,
-  image,
-  imageType,
-  imageSize,
+  tag = "div",
+  image = false,
+  imageType = null,
+  imageSize = null,
   title,
   description,
-  className,
-  border,
+  className = "",
+  border = true,
   ...rest
 }: AnimeCardsProps): JSX.Element {
   return React.createElement(
@@ -54,14 +54,5 @@ function AnimeCards({
     </Card>
   );
 }
-
-AnimeCards.defaultProps = {
-  tag: "div",
-  image: false,
-  imageType: null,
-  imageSize: null,
-  className: "",
-  border: true,
-};
 
 export default AnimeCards;

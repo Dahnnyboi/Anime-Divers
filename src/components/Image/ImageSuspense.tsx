@@ -26,9 +26,9 @@ interface ImageSuspenseProps {
 
 function ImageSuspense({
   children,
-  imageType,
-  imageSize,
-  defaultHeight,
+  imageType = null,
+  imageSize = null,
+  defaultHeight = 320,
 }: ImageSuspenseProps): JSX.Element {
   let height: number | undefined;
 
@@ -59,11 +59,5 @@ function ImageSuspense({
     </Suspense>
   );
 }
-
-ImageSuspense.defaultProps = {
-  imageType: null,
-  imageSize: null,
-  defaultHeight: 320,
-};
 
 export default ImageSuspense;

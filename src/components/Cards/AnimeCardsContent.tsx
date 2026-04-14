@@ -8,7 +8,7 @@ interface AnimeCardsContentProps {
 
 function AnimeCardsContent({
   children,
-  onList,
+  onList = false,
 }: AnimeCardsContentProps): JSX.Element {
   return (
     <Col
@@ -21,9 +21,5 @@ function AnimeCardsContent({
     </Col>
   );
 }
-
-AnimeCardsContent.defaultProps = {
-  onList: false,
-};
 
 export default AnimeCardsContent;

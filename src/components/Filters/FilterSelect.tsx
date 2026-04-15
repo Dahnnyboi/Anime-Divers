@@ -27,8 +27,7 @@ function FilterSelect({
     <div className="mb-2">
       <small>{title}</small>
       <InputGroup>
-        <Form.Control
-          as="select"
+        <Form.Select
           onChange={(e) => {
             const { value } = e.target;
 
@@ -61,7 +60,7 @@ function FilterSelect({
           })}
           {/* eslint-disable-next-line react/self-closing-comp */}
           <option value=""> </option>
-        </Form.Control>
+        </Form.Select>
         <Button
           variant="primary"
           onClick={() => {

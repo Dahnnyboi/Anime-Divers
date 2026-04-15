@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import { searchToQuery, queryToSearch } from "utils/query";
@@ -11,7 +12,7 @@ interface FilterInputProps {
 }
 
 function FilterInput({
-  defaultValue,
+  defaultValue = "",
   title,
   name,
   type,
@@ -80,9 +81,5 @@ function FilterInput({
     </div>
   );
 }
-
-FilterInput.defaultProps = {
-  defaultValue: "",
-};
 
 export default FilterInput;

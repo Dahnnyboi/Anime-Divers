@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import { searchToQuery, queryToSearch } from "utils/query";
@@ -12,7 +13,7 @@ interface FilterRadioProps {
 }
 
 function FilterRadio({
-  defaultValue,
+  defaultValue = "",
   name,
   title,
   source,
@@ -84,9 +85,5 @@ function FilterRadio({
     </div>
   );
 }
-
-FilterRadio.defaultProps = {
-  defaultValue: "",
-};
 
 export default FilterRadio;

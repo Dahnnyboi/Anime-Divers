@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import { Button, Modal } from "react-bootstrap";

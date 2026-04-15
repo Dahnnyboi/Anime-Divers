@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 
@@ -6,16 +7,12 @@ interface CenterLayoutProps {
   className?: string;
 }
 
-function CenterLayout({ children, className }: CenterLayoutProps): JSX.Element {
+function CenterLayout({ children, className = "" }: CenterLayoutProps): JSX.Element {
   return (
     <Container fluid="sm" className={className}>
       <Row>{children}</Row>
     </Container>
   );
 }
-
-CenterLayout.defaultProps = {
-  className: "",
-};
 
 export default CenterLayout;

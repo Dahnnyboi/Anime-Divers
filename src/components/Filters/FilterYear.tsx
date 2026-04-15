@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 import { useLocation, useHistory } from "react-router-dom";
@@ -10,7 +11,7 @@ interface FilterYearProps {
   name: string;
 }
 
-function FilterYear({ defaultValue, name }: FilterYearProps): JSX.Element {
+function FilterYear({ defaultValue = "", name }: FilterYearProps): JSX.Element {
   const history = useHistory();
   const { pathname, search } = useLocation();
   const searchQuery = searchToQuery(search);
@@ -73,9 +74,5 @@ function FilterYear({ defaultValue, name }: FilterYearProps): JSX.Element {
     />
   );
 }
-
-FilterYear.defaultProps = {
-  defaultValue: "",
-};
 
 export default FilterYear;

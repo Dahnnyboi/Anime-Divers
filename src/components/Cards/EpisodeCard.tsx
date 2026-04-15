@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Card } from "react-bootstrap";
 import {
@@ -10,7 +11,7 @@ import { ImageSuspense, Image } from "components/Image";
 import { labelDate } from "utils/dates";
 
 interface EpisodeCardProps {
-  image?: string;
+  image?: string | false;
   title: string;
   episodeNumber: number;
   date: string;
@@ -23,16 +24,16 @@ interface EpisodeCardProps {
 }
 
 function EpisodesCard({
-  image,
+  image = false,
   title,
   episodeNumber,
   date,
   description,
-  className,
-  border,
-  onClick,
-  styles,
-  header,
+  className = "",
+  border = true,
+  onClick = () => {},
+  styles = {},
+  header = "Episode",
   ...rest
 }: EpisodeCardProps): JSX.Element {
   return React.createElement(
@@ -66,14 +67,5 @@ function EpisodesCard({
     </Card>
   );
 }
-
-EpisodesCard.defaultProps = {
-  image: false,
-  className: "",
-  border: true,
-  styles: {},
-  header: "Episode",
-  onClick: () => {},
-};
 
 export default EpisodesCard;

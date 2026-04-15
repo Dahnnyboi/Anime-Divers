@@ -48,7 +48,7 @@ function ViewChapterModal({
             <small className="text-muted">{labelDate(airdate)}</small>
             <p>{synopsis}</p>
             <Modal.Footer>
-              <Button variant="white" onClick={() => toggle()}>
+              <Button variant="secondary" onClick={() => toggle()}>
                 Close
               </Button>
             </Modal.Footer>

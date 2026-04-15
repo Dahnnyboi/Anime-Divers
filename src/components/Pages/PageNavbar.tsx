@@ -31,7 +31,7 @@ function NavigationBar({
           <Link to="/">Anime Divers</Link>
         </Navbar.Brand>
         <Navbar.Toggle
-          bsPrefix="navbar-toggler border-0"
+          className="border-0"
           aria-controls="responsive-navbar-nav"
         >
           <FaAngleDoubleDown />
@@ -40,7 +40,7 @@ function NavigationBar({
           <Link
             to="/anime"
             className={cx(
-              "ml-auto text-secondary p-2 py-2",
+              "ms-auto text-secondary p-2 py-2",
               styles["navigation-item"]
             )}
           >
@@ -49,7 +49,7 @@ function NavigationBar({
           <Link
             to="/manga"
             className={cx(
-              "ml-auto text-secondary p-2 py-2",
+              "ms-auto text-secondary p-2 py-2",
               styles["navigation-item"]
             )}
           >

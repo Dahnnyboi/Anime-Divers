@@ -27,8 +27,7 @@ function FilterSelect({
     <div className="mb-2">
       <small>{title}</small>
       <InputGroup>
-        <Form.Control
-          as="select"
+        <Form.Select
           onChange={(e) => {
             const { value } = e.target;
 
@@ -61,29 +60,27 @@ function FilterSelect({
           })}
           {/* eslint-disable-next-line react/self-closing-comp */}
           <option value=""> </option>
-        </Form.Control>
-        <InputGroup.Append>
-          <Button
-            variant="primary"
-            onClick={() => {
-              delete searchQuery[name];
-              setSelected("");
+        </Form.Select>
+        <Button
+          variant="primary"
+          onClick={() => {
+            delete searchQuery[name];
+            setSelected("");
 
-              if (searchQuery.limit && searchQuery.offset) {
-                delete searchQuery.limit;
-                delete searchQuery.offset;
-              }
+            if (searchQuery.limit && searchQuery.offset) {
+              delete searchQuery.limit;
+              delete searchQuery.offset;
+            }
 
-              history.push({
-                pathname,
-                search: queryToSearch(searchQuery),
-              });
-            }}
-            disabled={!selected}
-          >
-            Clear
-          </Button>
-        </InputGroup.Append>
+            history.push({
+              pathname,
+              search: queryToSearch(searchQuery),
+            });
+          }}
+          disabled={!selected}
+        >
+          Clear
+        </Button>
       </InputGroup>
     </div>
   );

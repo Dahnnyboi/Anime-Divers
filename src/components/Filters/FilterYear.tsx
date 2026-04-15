@@ -22,24 +22,22 @@ function FilterYear({ defaultValue = "", name }: FilterYearProps): JSX.Element {
         <small className="d-block">Filter By Year</small>
         <InputGroup>
           <FormControl placeholder="Year" aria-label="Year" {...props} />
-          <InputGroup.Append>
-            <Button
-              variant="primary"
-              onClick={() => {
-                delete searchQuery[name];
+          <Button
+            variant="primary"
+            onClick={() => {
+              delete searchQuery[name];
 
-                if (searchQuery.limit && searchQuery.offset) {
-                  delete searchQuery.limit;
-                  delete searchQuery.offset;
-                }
+              if (searchQuery.limit && searchQuery.offset) {
+                delete searchQuery.limit;
+                delete searchQuery.offset;
+              }
 
-                props.onChange({ target: { value: "" } });
-              }}
-              disabled={!props.value}
-            >
-              Clear
-            </Button>
-          </InputGroup.Append>
+              props.onChange({ target: { value: "" } });
+            }}
+            disabled={!props.value}
+          >
+            Clear
+          </Button>
         </InputGroup>
       </div>
     );

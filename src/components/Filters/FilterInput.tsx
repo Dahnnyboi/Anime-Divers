@@ -54,29 +54,27 @@ function FilterInput({
           }}
           {...rest}
         />
-        <InputGroup.Append>
-          <Button
-            variant="primary"
-            onClick={() => {
-              if (inputRef.current) {
-                inputRef.current.value = "";
-                delete searchQuery[name];
+        <Button
+          variant="primary"
+          onClick={() => {
+            if (inputRef.current) {
+              inputRef.current.value = "";
+              delete searchQuery[name];
 
-                if (searchQuery.limit && searchQuery.offset) {
-                  delete searchQuery.limit;
-                  delete searchQuery.offset;
-                }
-
-                history.push({
-                  pathname,
-                  search: queryToSearch(searchQuery),
-                });
+              if (searchQuery.limit && searchQuery.offset) {
+                delete searchQuery.limit;
+                delete searchQuery.offset;
               }
-            }}
-          >
-            Clear
-          </Button>
-        </InputGroup.Append>
+
+              history.push({
+                pathname,
+                search: queryToSearch(searchQuery),
+              });
+            }
+          }}
+        >
+          Clear
+        </Button>
       </InputGroup>
     </div>
   );

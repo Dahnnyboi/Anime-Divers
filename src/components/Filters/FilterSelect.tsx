@@ -62,28 +62,26 @@ function FilterSelect({
           {/* eslint-disable-next-line react/self-closing-comp */}
           <option value=""> </option>
         </Form.Control>
-        <InputGroup.Append>
-          <Button
-            variant="primary"
-            onClick={() => {
-              delete searchQuery[name];
-              setSelected("");
+        <Button
+          variant="primary"
+          onClick={() => {
+            delete searchQuery[name];
+            setSelected("");
 
-              if (searchQuery.limit && searchQuery.offset) {
-                delete searchQuery.limit;
-                delete searchQuery.offset;
-              }
+            if (searchQuery.limit && searchQuery.offset) {
+              delete searchQuery.limit;
+              delete searchQuery.offset;
+            }
 
-              history.push({
-                pathname,
-                search: queryToSearch(searchQuery),
-              });
-            }}
-            disabled={!selected}
-          >
-            Clear
-          </Button>
-        </InputGroup.Append>
+            history.push({
+              pathname,
+              search: queryToSearch(searchQuery),
+            });
+          }}
+          disabled={!selected}
+        >
+          Clear
+        </Button>
       </InputGroup>
     </div>
   );
